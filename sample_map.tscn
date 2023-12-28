@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct2uavqt1ddf7"]
+
+[ext_resource type="Shader" path="res://fog.gdshader" id="1_11quc"]
+[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_ekb26"]
+
+[sub_resource type="GDScript" id="GDScript_iubpq"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gadq2"]
+shader = ExtResource("1_11quc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxnfe"]
+
+[node name="sample_map" type="Area2D"]
+script = SubResource("GDScript_iubpq")
+
+[node name="player" parent="." instance=ExtResource("2_ekb26")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_gadq2")
+offset_right = 1369.0
+offset_bottom = 801.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_qxnfe")
+color = Color(0, 0, 0, 1)

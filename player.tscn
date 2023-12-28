@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://sxj1ykp6a51r"]
+
+[ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
+[ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
+[ext_resource type="Texture2D" uid="uid://ce3kn8dx2uxk6" path="res://icon.svg" id="2_1xg5g"]
+[ext_resource type="Script" path="res://flashlight.gd" id="3_dh52x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
+shader = ExtResource("1_7kqtt")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7qu0"]
+radius = 73.1095
+
+[node name="player" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_o7jv6")
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fxm7v")
+
+[node name="rigidbody" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y7qu0")
+
+[node name="visibility" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_y7qu0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_dh52x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+modulate = Color(0.172549, 0.411765, 0.32549, 1)
+scale = Vector2(4.24642, 7.01541)
+polygon = PackedVector2Array(150, 30, 150, -30, 0, 0)
+
+[node name="Polygon2D" type="Polygon2D" parent="Area2D/CollisionPolygon2D"]
+polygon = PackedVector2Array(150.715, 30.7894, 0, 0, 149.773, -29.649)
+
+[node name="Icon2" type="Sprite2D" parent="Area2D"]
+position = Vector2(488, -14)
+texture = ExtResource("2_1xg5g")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_1xg5g")
