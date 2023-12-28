@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbw44bdfdirmg"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_rhvs3"]
+[ext_resource type="Script" path="res://EnemyColor.gd" id="2_nd80s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xokvy"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Patroller" type="CharacterBody2D" parent="."]
+position = Vector2(0, -149)
+script = ExtResource("1_rhvs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Patroller"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xokvy")
+
+[node name="Polygon2D" type="Polygon2D" parent="Patroller"]
+color = Color(0.313726, 0.603922, 0.239216, 1)
+polygon = PackedVector2Array(1, -36, 70, -1, 2, 33, -29, 1)
+script = ExtResource("2_nd80s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -149)
+
+[node name="Patroller2" type="CharacterBody2D" parent="."]
+position = Vector2(-225, -148)
+script = ExtResource("1_rhvs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Patroller2"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xokvy")
+
+[node name="Polygon2D" type="Polygon2D" parent="Patroller2"]
+color = Color(0.313726, 0.603922, 0.239216, 1)
+polygon = PackedVector2Array(1, -36, 70, -1, 2, 33, -29, 1)
+
+[node name="Patroller3" type="CharacterBody2D" parent="."]
+position = Vector2(0, 145)
+script = ExtResource("1_rhvs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Patroller3"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_xokvy")
+
+[node name="Polygon2D" type="Polygon2D" parent="Patroller3"]
+color = Color(0.313726, 0.603922, 0.239216, 1)
+polygon = PackedVector2Array(1, -36, 70, -1, 2, 33, -29, 1)
