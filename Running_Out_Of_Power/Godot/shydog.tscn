@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbw44bdfdirmg"]
+
+[ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemy_shydog.tscn" id="1_6e1uv"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Patroller" parent="." instance=ExtResource("1_6e1uv")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -149)
+
+[node name="Patroller3" parent="." instance=ExtResource("1_6e1uv")]
+position = Vector2(22, -255)
+
+[node name="Patroller2" parent="." instance=ExtResource("1_6e1uv")]
+position = Vector2(-229, -149)
