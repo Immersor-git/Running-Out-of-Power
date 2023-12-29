@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1x00vslapi5s"]
+[gd_scene load_steps=3 format=3 uid="uid://ca1gb02u0b62g"]
 
-[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="3_7cbog"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="3_7cbog"]
 
 [sub_resource type="TileSet" id="TileSet_syp51"]
 
