@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://71cfxnqhp0ne"]
+[gd_scene load_steps=5 format=3 uid="uid://bx78jlt0ajvh"]
 
-[ext_resource type="Script" path="res://text_boxes/text_box.gd" id="1_qs0xc"]
-[ext_resource type="Script" path="res://text_boxes/Button.gd" id="2_x2ruu"]
+[ext_resource type="Script" path="res://text_boxes/text_box.gd" id="1_7tlpc"]
+[ext_resource type="Script" path="res://text_boxes/Button.gd" id="2_h0agc"]
+[ext_resource type="FontFile" uid="uid://b1jci65403xkw" path="res://text_boxes/Lucida Sans Typewriter Regular.ttf" id="2_qc0qa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koxgx"]
 bg_color = Color(0, 0, 0, 1)
@@ -12,13 +13,16 @@ border_width_bottom = 20
 border_blend = true
 
 [node name="TextBox" type="CanvasLayer"]
-script = ExtResource("1_qs0xc")
+script = ExtResource("1_7tlpc")
 
 [node name="TextBoxContainer" type="MarginContainer" parent="."]
-anchors_preset = 10
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
-offset_bottom = 563.0
+anchor_bottom = 1.0
+offset_top = -214.0
 grow_horizontal = 2
+grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 metadata/_edit_group_ = true
@@ -43,14 +47,15 @@ layout_mode = 2
 [node name="startLabel" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 70
+theme_override_font_sizes/font_size = 49
 text = "*"
 
 [node name="LabelText" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_qc0qa")
+theme_override_font_sizes/font_size = 30
 text = "GOD MOTHA FUCKIN DAMNbb im a fuckin gggenius and it also automatically wraps text too heheheheheh"
 autowrap_mode = 3
 
@@ -58,13 +63,14 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("2_qc0qa")
+theme_override_font_sizes/font_size = 23
 text = "esc"
 flat = true
 alignment = 2
 icon_alignment = 1
 vertical_icon_alignment = 2
-script = ExtResource("2_x2ruu")
+script = ExtResource("2_h0agc")
 
 [node name="nextChar" type="Timer" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
 wait_time = 0.05

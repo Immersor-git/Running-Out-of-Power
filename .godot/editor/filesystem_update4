@@ -1,5 +1,5 @@
 res://player.tscn
-res://sample_map.tscn
-res://enemy_ShyDog/enemy_shydog.tscn
 res://fog.gdshader
-res://enemy_ShyDog/CharacterBody2D.gd
+res://text_boxes/text_box.tscn
+res://text_boxes/descriptorBox.tscn
+res://text_boxes/descriptor_box.tscn
