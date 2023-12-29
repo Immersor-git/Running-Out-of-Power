@@ -118,5 +118,5 @@ update_scale = false
 material = SubResource("ShaderMaterial_0w4oq")
 position = Vector2(-8, 38)
 rotation = 1.57079
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 texture = ExtResource("7_hryr5")
