@@ -12,7 +12,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if get_rect().has_point(to_local(get_global_mouse_position())):
+		if get_rect().has_point(to_local(get_global_mouse_position())) and position.distance_to(%player.position) < 50:
 			%player.idCards += 1
 			print('YOU HAVE ', %player.idCards, ' ID CARDS')
 			queue_free()
