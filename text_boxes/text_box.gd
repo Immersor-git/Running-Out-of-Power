@@ -10,14 +10,14 @@ var itemData = {}
 
 
 
-var CHAR_READ_RATE = 0.5
+
 var iterative_text: int = 0
 var textToAdd = "this text is added and its a little bit kinda long lmfao"
 
 
 
 func _physics_process(delta):
-	if Input.is_action_pressed("close_menu"):
+	if Input.is_action_pressed("close_menu") || Input.is_action_pressed("click"):
 		close_textbox()
 	#if Input.is_action_pressed("")
 
@@ -58,9 +58,6 @@ func show_textbox():
 func add_text(next_text):
 	textBoxText.text = next_text
 	show_textbox()
-
-
-
 
 
 #func set_text(new_text: String):

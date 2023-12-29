@@ -10,11 +10,9 @@ func _ready():
 func _process(delta):
 	pass
 
-
-
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if get_rect().has_point(to_local(get_global_mouse_position())):
-			%player.batteries += 1
-			print('YOU HAVE ', %player.batteries, ' BATTERIES')
+			%player.idCards += 1
+			print('YOU HAVE ', %player.idCards, ' ID CARDS')
 			queue_free()
