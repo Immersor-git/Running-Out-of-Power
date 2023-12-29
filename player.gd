@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var SPEED = 600
 
+var batteries = 0
+
 func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "forward", "back")
 	velocity = direction * SPEED
