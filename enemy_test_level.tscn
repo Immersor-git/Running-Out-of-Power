@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b6b3uoftf4vkv"]
 
 [ext_resource type="PackedScene" uid="uid://bi3ib870qqwh4" path="res://enemies/angel/enemy_angel.tscn" id="1_4outp"]
-[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_4rskp"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_4rskp"]
 
 [node name="enemy_test_level" type="Node2D"]
 
@@ -33,5 +33,3 @@ scale = Vector2(98.3358, 48.8946)
 visible = false
 position = Vector2(-7, 0)
 color = Color(0, 0, 0, 0.427451)
-
-[connection signal="set_path" from="Angel" to="Angel/EnemyBase" method="set_path"]
