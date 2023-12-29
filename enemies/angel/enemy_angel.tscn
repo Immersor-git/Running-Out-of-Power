@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bi3ib870qqwh4"]
+[gd_scene load_steps=19 format=3 uid="uid://bi3ib870qqwh4"]
 
 [ext_resource type="Script" path="res://enemies/angel/enemy_angel.gd" id="1_cl3vq"]
 [ext_resource type="Texture2D" uid="uid://dk4kagl2ru3ok" path="res://enemies/angel/angel_sprite_sheet.png" id="2_uqe2f"]
@@ -167,6 +167,9 @@ animation = &"back"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kuaj4"]
 animation = &"forward"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wf5qo"]
+animation = &"left"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_u0tri"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_7tijy")
 blend_point_0/pos = Vector2(-1, 0)
@@ -176,6 +179,8 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_kchn5")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_kuaj4")
 blend_point_3/pos = Vector2(0, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_wf5qo")
+blend_point_4/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_17y0q"]
@@ -222,7 +227,7 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_17y0q")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Direction/blend_position = Vector2(-0.0243161, 0.438972)
+parameters/Direction/blend_position = Vector2(-0.0134329, -0.38758)
 
 [connection signal="set_path" from="." to="EnemyBase" method="set_path"]
 [connection signal="start_following" from="." to="EnemyBase" method="_on_start_following"]
