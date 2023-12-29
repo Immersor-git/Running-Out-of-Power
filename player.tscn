@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://sxj1ykp6a51r"]
+
+[ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
+[ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
+[ext_resource type="Texture2D" uid="uid://30h5kbgss1br" path="res://icon.svg" id="2_1xg5g"]
+[ext_resource type="Script" path="res://flashlight.gd" id="3_dh52x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
+shader = ExtResource("1_7kqtt")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7qu0"]
+radius = 73.1095
+
+[sub_resource type="Gradient" id="Gradient_se0co"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_70qr4"]
+gradient = SubResource("Gradient_se0co")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.83, 0.83)
+
+[sub_resource type="Gradient" id="Gradient_c882s"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_31fiy"]
+gradient = SubResource("Gradient_c882s")
+width = 100
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_44gua"]
+polygon = PackedVector2Array(0, 0, 297.581, -187.295)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6pr63"]
+polygon = PackedVector2Array(0, 0, 487.676, 2751.28)
+
+[node name="player" type="CharacterBody2D"]
+z_index = 2
+material = SubResource("ShaderMaterial_o7jv6")
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fxm7v")
+
+[node name="rigidbody" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_y7qu0")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.999999, 0.999999)
+energy = 0.84
+range_z_max = 500
+range_layer_min = -1
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_70qr4")
+texture_scale = 8.65
+height = 120.0
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_dh52x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+modulate = Color(0.172549, 0.411765, 0.32549, 1)
+scale = Vector2(4.24642, 7.01541)
+polygon = PackedVector2Array(150, 30, 150, -30, 0, 0)
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D"]
+position = Vector2(82, 2)
+scale = Vector2(12.5819, 7.73616)
+energy = 4.09
+range_z_max = 500
+range_layer_min = -1
+range_layer_max = 10
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_31fiy")
+texture_scale = 1.05
+height = 35.0
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Area2D"]
+position = Vector2(10, 0)
+rotation = -0.331613
+scale = Vector2(2.65151, -3.24627)
+occluder = SubResource("OccluderPolygon2D_44gua")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Area2D"]
+position = Vector2(10, 0)
+rotation = -0.331613
+scale = Vector2(2.19308, 0.000845447)
+occluder = SubResource("OccluderPolygon2D_6pr63")
+
+[node name="Icon" type="Sprite2D" parent="."]
+z_index = 1000
+texture = ExtResource("2_1xg5g")

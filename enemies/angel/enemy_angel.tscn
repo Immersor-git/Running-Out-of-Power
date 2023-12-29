@@ -1,204 +1,30 @@
-[gd_scene load_steps=19 format=3 uid="uid://bi3ib870qqwh4"]
+[gd_scene load_steps=6 format=3 uid="uid://bi3ib870qqwh4"]
 
 [ext_resource type="Script" path="res://enemies/angel/enemy_angel.gd" id="1_cl3vq"]
 [ext_resource type="Texture2D" uid="uid://dk4kagl2ru3ok" path="res://enemies/angel/angel_sprite_sheet.png" id="2_uqe2f"]
 [ext_resource type="PackedScene" uid="uid://bj0l46jyyahfn" path="res://enemies/enemy_base.tscn" id="3_638vx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02rs4"]
-radius = 479.009
+radius = 875.005
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0k1q"]
-radius = 12.0
-height = 62.0
-
-[sub_resource type="Animation" id="Animation_j4bln"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AngelSpriteSheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AngelSpriteSheet:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AngelSpriteSheet:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_7jnse"]
-resource_name = "back"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AngelSpriteSheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.1),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_1ijy3"]
-resource_name = "forward"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AngelSpriteSheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_jqo1a"]
-resource_name = "left"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AngelSpriteSheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AngelSpriteSheet:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AngelSpriteSheet:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(5, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_asm44"]
-resource_name = "right"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AngelSpriteSheet:flip_h")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.4),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AngelSpriteSheet:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r53cv"]
-_data = {
-"RESET": SubResource("Animation_j4bln"),
-"back": SubResource("Animation_7jnse"),
-"forward": SubResource("Animation_1ijy3"),
-"left": SubResource("Animation_jqo1a"),
-"right": SubResource("Animation_asm44")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7tijy"]
-animation = &"left"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_joqlb"]
-animation = &"right"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kchn5"]
-animation = &"back"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kuaj4"]
-animation = &"forward"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wf5qo"]
-animation = &"left"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_u0tri"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_7tijy")
-blend_point_0/pos = Vector2(-1, 0)
-blend_point_1/node = SubResource("AnimationNodeAnimation_joqlb")
-blend_point_1/pos = Vector2(1, 0)
-blend_point_2/node = SubResource("AnimationNodeAnimation_kchn5")
-blend_point_2/pos = Vector2(0, 1)
-blend_point_3/node = SubResource("AnimationNodeAnimation_kuaj4")
-blend_point_3/pos = Vector2(0, -1)
-blend_point_4/node = SubResource("AnimationNodeAnimation_wf5qo")
-blend_point_4/pos = Vector2(-1, 0)
-blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_17y0q"]
-states/Direction/node = SubResource("AnimationNodeBlendSpace2D_u0tri")
-states/Direction/position = Vector2(358.5, 68)
+radius = 33.0
+height = 174.0
 
 [node name="Angel" type="CharacterBody2D"]
 script = ExtResource("1_cl3vq")
 
 [node name="AngelSpriteSheet" type="Sprite2D" parent="."]
-position = Vector2(3, -29)
+top_level = true
+scale = Vector2(2.89996, 2.89996)
 texture = ExtResource("2_uqe2f")
-offset = Vector2(5, 0)
+offset = Vector2(8, 0)
 flip_h = true
 hframes = 3
 
 [node name="DetectBox" type="Area2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(1, 0)
 collision_layer = 0
 collision_mask = 64
 
@@ -208,26 +34,16 @@ shape = SubResource("CircleShape2D_02rs4")
 debug_color = Color(0.839216, 0.364706, 0.333333, 0.419608)
 
 [node name="EnemyBase" parent="." instance=ExtResource("3_638vx")]
+position = Vector2(2, 86)
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(1, -29)
+position = Vector2(1, -3)
 shape = SubResource("CapsuleShape2D_r0k1q")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_r53cv")
-}
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-deterministic = false
-reset_on_save = false
-callback_mode_method = 1
-libraries = {
-"": SubResource("AnimationLibrary_r53cv")
-}
-tree_root = SubResource("AnimationNodeStateMachine_17y0q")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Direction/blend_position = Vector2(-0.0134329, -0.38758)
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../AngelSpriteSheet")
+update_rotation = false
+update_scale = false
 
 [connection signal="set_path" from="." to="EnemyBase" method="set_path"]
 [connection signal="start_following" from="." to="EnemyBase" method="_on_start_following"]
