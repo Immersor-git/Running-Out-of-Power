@@ -14,7 +14,6 @@ points = PackedVector2Array(201, 315, 650, 1581, 4277, 4383, 10229, 4422, 16254,
 closed = true
 
 [node name="test_player" parent="." instance=ExtResource("2_8xhl2")]
-position = Vector2(15418, 6884)
+position = Vector2(43, 53)
 
 [node name="Camera2D" type="Camera2D" parent="test_player"]
-zoom = Vector2(0.08, 0.08)
