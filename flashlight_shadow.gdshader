@@ -2,8 +2,40 @@ shader_type canvas_item;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
 uniform sampler2D distortionTexture;
+uniform int SAMPLES: hint_range(10, 50, 1) = 32;
+uniform vec2 lightPos;
+
+varying vec2 pos;
 
 void fragment(){ 
+	float shadows = -1.0;
+	
+	vec2 direction = normalize(lightPos - pos);
+	float lightDistance = length(lightPos - pos);
+	
+	float rayProgress = 0.0;
+	for(int i=0; i < SAMPLES; i++) {
+		float sceneDist = texture_sdf(pos + direction * rayProgress);
+		
+		if (sceneDist <= 0.0 && shadows == -1.0) {
+			shadows = 0.0;
+		}
+		
+		if (rayProgress > lightDistance && shadows == -1.0) {
+			shadows = 1.0;
+		}
+		
+		rayProgress = rayProgress + sceneDist;
+	}
+	vec3 light = shadows * vec3(0.6, 0.6, 1.0);
+	
+	float sceneDistance = texture_sdf(pos);
+	float distanceChange = fwidth(sceneDistance) * 0.5;
+	float binaryScene = smoothstep(distanceChange, -distanceChange, sceneDistance);
+	vec3 geometry = binaryScene * vec3(0.0, 0.3, 0.1);
+	
+	vec3 col = geometry + light;
+	
 	vec4 screenColor = texture(SCREEN_TEXTURE, SCREEN_UV);
 	vec4 flashlightTexture = texture(TEXTURE, UV);
 	vec4 mask = screenColor * flashlightTexture;
@@ -23,5 +55,5 @@ void fragment(){
 	
 	vec4 finalColor = mask + maskedGrayscale;
 	
-	COLOR = finalColor;
+	COLOR = vec4(geometry, 1.0);
 }

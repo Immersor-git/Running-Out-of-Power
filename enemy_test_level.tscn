@@ -1,9 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6b3uoftf4vkv"]
 
-[ext_resource type="PackedScene" uid="uid://bi3ib870qqwh4" path="res://enemies/angel/enemy_angel.tscn" id="1_4outp"]
 [ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_4rskp"]
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_oomlb"]
 [ext_resource type="Texture2D" uid="uid://gbkr01aqshwf" path="res://tileset/Solaria Demo Update 01.png" id="3_tbw2c"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kebk"]
+polygon = PackedVector2Array(20, 481, 241, 480, 240, 679, 26, 680)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pdjkh"]
 texture = ExtResource("3_tbw2c")
@@ -376,11 +378,10 @@ sources/0 = SubResource("TileSetAtlasSource_pdjkh")
 y_sort_enabled = true
 position = Vector2(1600, 965)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(-7, 0)
-color = Color(0, 0, 0, 1)
+[node name="AngelPath" type="Line2D" parent="."]
+position = Vector2(146, 179)
+points = PackedVector2Array(201, 315, 650, 1581, 4277, 4383, 10229, 4422, 16254, 1240, 18496, -2070, 15058, -5978, 8202, -7623, 3396, -6256)
+closed = true
 
 [node name="player" parent="." instance=ExtResource("2_4rskp")]
 position = Vector2(-619, 128)
@@ -394,13 +395,12 @@ limit_top = 0
 script = ExtResource("2_oomlb")
 tilemap = NodePath("../../Level")
 
-[node name="Angel" parent="." node_paths=PackedStringArray("Path") instance=ExtResource("1_4outp")]
-position = Vector2(146, 179)
-Path = NodePath("AngelPath")
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-13, 13)
+occluder = SubResource("OccluderPolygon2D_1kebk")
 
-[node name="AngelPath" type="Line2D" parent="Angel"]
-points = PackedVector2Array(201, 315, 650, 1581, 4277, 4383, 10229, 4422, 16254, 1240, 18496, -2070, 15058, -5978, 8202, -7623, 3396, -6256)
-closed = true
+[node name="Polygon2D" type="Polygon2D" parent="LightOccluder2D"]
+polygon = PackedVector2Array(22, 484, 236, 483, 236, 675, 32, 675)
 
 [node name="Level" type="TileMap" parent="."]
 y_sort_enabled = true
