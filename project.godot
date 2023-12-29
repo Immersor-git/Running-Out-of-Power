@@ -14,6 +14,10 @@ config/name="Running_Out_Of_Power_Electric_Boogaloo"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*res://text_boxes/singletons/SignalBus.gd"
+
 [dotnet]
 
 project/assembly_name="Running_Out_Of_Power_Electric_Boogaloo"

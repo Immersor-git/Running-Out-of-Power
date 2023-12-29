@@ -1,5 +1,10 @@
 extends CanvasLayer
 
+var file_path = "res://text_boxes/dialogue.json"
+var itemData = {}
+
+
+
 @onready var textBoxContainer = $TextBoxContainer
 @onready var textBoxText = $TextBoxContainer/MarginContainer/HBoxContainer/LabelText
 
@@ -19,6 +24,24 @@ func _physics_process(delta):
 func _ready():
 	close_textbox()
 	add_text(textToAdd)
+	#SignalBus.connect("display_dialogue", self,"on_display_dialogue")
+
+
+func _load_json_file(filePath : String):
+	if FileAccess.file_exists(filePath):
+		var datafile = FileAccess.open(filePath, FileAccess.READ)
+		var parsedResult = JSON.parse_string(datafile.get_as_text())
+		
+		if parsedResult is Dictionary:
+			return parsedResult
+		else:
+			print("error reading file")
+	else:
+		print("error, no file exists")
+		
+
+func _load_scene_text():
+	pass
 		
 func close_textbox():
 	textBoxText.text = ""

@@ -13,6 +13,7 @@ border_width_bottom = 20
 border_blend = true
 
 [node name="TextBox" type="CanvasLayer"]
+process_mode = 1
 script = ExtResource("1_qs0xc")
 
 [node name="TextBoxContainer" type="MarginContainer" parent="."]
