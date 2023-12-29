@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://dutqccpb3u6er"]
 
-[ext_resource type="Texture2D" uid="uid://bborvle30fuo4" path="res://BATTERY.png" id="1_b6w3j"]
-[ext_resource type="Script" path="res://battery.gd" id="2_004so"]
+[ext_resource type="Texture2D" uid="uid://bborvle30fuo4" path="res://BATTERY.png" id="1_waaof"]
+[ext_resource type="Script" path="res://battery.gd" id="2_evtyc"]
 
-[node name="Sprite2D" type="Sprite2D"]
-texture = ExtResource("1_b6w3j")
-script = ExtResource("2_004so")
+[node name="Battery" type="Sprite2D"]
+texture = ExtResource("1_waaof")
+script = ExtResource("2_evtyc")
