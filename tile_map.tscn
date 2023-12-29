@@ -183,6 +183,12 @@ layer_0/tile_data = PackedInt32Array(0, 393216, 6, 65536, 655360, 6, 131072, 655
 layer_1/tile_data = PackedInt32Array(524317, 983040, 7, 458786, 589824, 7, 458785, 589824, 7, 458784, 589824, 7, 458783, 589824, 7, 458782, 589824, 7, 458781, 589824, 7, 458780, 589824, 7, 458778, 589824, 7, 458777, 589824, 7, 458776, 589824, 7, 458775, 589824, 7, 458774, 589824, 7, 458773, 589824, 7, 458772, 589824, 7, 458771, 589824, 7, 458770, 589824, 7, 458769, 589824, 7, 458768, 589824, 7, 458767, 589824, 7, 458766, 589824, 7, 458765, 589824, 7, 458764, 589824, 7, 458763, 589824, 7, 458762, 589824, 7, 458761, 589824, 7, 458760, 589824, 7, 458759, 589824, 7, 458758, 589824, 7, 458757, 589824, 7, 458756, 589824, 7, 458755, 589824, 7, 458754, 589824, 7, 458753, 589824, 7)
 script = ExtResource("2_fm7hq")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+position = Vector2(167, 424)
+scale = Vector2(0.1, 0.1)
+color = Color(0.835294, 0.952941, 0.905882, 0.733333)
+
 [node name="player" parent="." instance=ExtResource("2_f7ffp")]
 unique_name_in_owner = true
 position = Vector2(167, 424)
@@ -191,25 +197,16 @@ scale = Vector2(0.1, 0.1)
 [node name="Camera2D" type="Camera2D" parent="player"]
 
 [node name="Battery" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(416, 377)
+position = Vector2(401, 392.5)
 
 [node name="Battery2" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(513, 416)
+position = Vector2(393, 337.25)
 
 [node name="Battery3" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(621, 462)
+position = Vector2(566.5, 355)
 
 [node name="Battery4" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(755, 409)
+position = Vector2(471.75, 430.75)
 
 [node name="Battery5" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(781, 459)
-
-[node name="Battery6" parent="." instance=ExtResource("3_c3yia")]
-position = Vector2(394, 477)
-
-[node name="Button" type="Button" parent="."]
-offset_left = 984.0
-offset_top = 399.0
-offset_right = 1012.0
-offset_bottom = 427.0
+position = Vector2(261.75, 384.5)
