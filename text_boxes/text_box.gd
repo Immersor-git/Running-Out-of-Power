@@ -2,19 +2,14 @@ extends CanvasLayer
 
 var file_path = "res://text_boxes/dialogue.json"
 var itemData = {}
-
+@export var showDescription : bool = true
 
 
 @onready var textBoxContainer = $TextBoxContainer
 @onready var textBoxText = $TextBoxContainer/MarginContainer/HBoxContainer/LabelText
 
-
-
-
 var iterative_text: int = 0
 var textToAdd = "this text is added and its a little bit kinda long lmfao"
-
-
 
 func _physics_process(delta):
 	if Input.is_action_pressed("close_menu") || Input.is_action_pressed("click"):
@@ -24,9 +19,10 @@ func _physics_process(delta):
 
 func _ready():
 	close_textbox()
-	textToAdd = _load_json_file(file_path, "Motherboard")
-	print(textToAdd[0])
-	add_text(textToAdd[0])
+	if showDescription:
+		textToAdd = _load_json_file(file_path, "Motherboard")
+		print(textToAdd[0])
+		add_text(textToAdd[0])
 
 	#SignalBus.connect("display_dialogue", self,"on_display_dialogue")
 

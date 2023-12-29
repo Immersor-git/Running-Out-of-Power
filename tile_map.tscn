@@ -1,11 +1,22 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=9 format=3 uid="uid://bkeknn5sfj4nl"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://crstnpqwy2rud"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Texture2D" uid="uid://dqypv5tqyq7m5" path="res://MapTiles.png" id="1_gae8d"]
-[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_f7ffp"]
+[ext_resource type="PackedScene" uid="uid://c0174oelebw5j" path="res://player.tscn" id="2_f7ffp"]
 [ext_resource type="Script" path="res://tile_map.gd" id="2_fm7hq"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dutqccpb3u6er" path="res://battery.tscn" id="3_c3yia"]
 [ext_resource type="PackedScene" uid="uid://4ybxqeali1iy" path="res://door.tscn" id="5_ts76u"]
 [ext_resource type="PackedScene" uid="uid://jywq5t4kjuxs" path="res://id_card.tscn" id="6_6wi68"]
+=======
+[ext_resource type="PackedScene" path="res://battery.tscn" id="3_c3yia"]
+[ext_resource type="Script" path="res://interactable.gd" id="5_cqlod"]
+[ext_resource type="Texture2D" uid="uid://30h5kbgss1br" path="res://icon.svg" id="5_ryaco"]
+[ext_resource type="PackedScene" uid="uid://bx78jlt0ajvh" path="res://text_boxes/descriptor_box.tscn" id="7_qivmo"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uq6oa"]
 texture = ExtResource("1_gae8d")
@@ -214,6 +225,7 @@ position = Vector2(471.75, 430.75)
 [node name="Battery5" parent="." instance=ExtResource("3_c3yia")]
 position = Vector2(261.75, 384.5)
 
+<<<<<<< Updated upstream
 [node name="door" parent="." instance=ExtResource("5_ts76u")]
 position = Vector2(880, 288)
 
@@ -222,3 +234,12 @@ position = Vector2(320.5, 418)
 
 [node name="IDCard2" parent="." instance=ExtResource("6_6wi68")]
 position = Vector2(366.25, 450.75)
+=======
+[node name="interactable" type="Sprite2D" parent="."]
+position = Vector2(238.5, 450.5)
+scale = Vector2(0.183236, 0.183236)
+texture = ExtResource("5_ryaco")
+script = ExtResource("5_cqlod")
+
+[node name="TextBox" parent="." instance=ExtResource("7_qivmo")]
+>>>>>>> Stashed changes
