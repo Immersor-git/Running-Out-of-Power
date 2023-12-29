@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkeknn5sfj4nl"]
+[gd_scene load_steps=9 format=3 uid="uid://bkeknn5sfj4nl"]
 
 [ext_resource type="Texture2D" uid="uid://dqypv5tqyq7m5" path="res://MapTiles.png" id="1_gae8d"]
 [ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_f7ffp"]
 [ext_resource type="Script" path="res://tile_map.gd" id="2_fm7hq"]
 [ext_resource type="PackedScene" uid="uid://dutqccpb3u6er" path="res://battery.tscn" id="3_c3yia"]
+[ext_resource type="PackedScene" uid="uid://4ybxqeali1iy" path="res://door.tscn" id="5_ts76u"]
+[ext_resource type="PackedScene" uid="uid://jywq5t4kjuxs" path="res://id_card.tscn" id="6_6wi68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uq6oa"]
 texture = ExtResource("1_gae8d")
@@ -191,10 +193,11 @@ color = Color(0.835294, 0.952941, 0.905882, 0.733333)
 
 [node name="player" parent="." instance=ExtResource("2_f7ffp")]
 unique_name_in_owner = true
-position = Vector2(167, 424)
-scale = Vector2(0.1, 0.1)
+position = Vector2(168.75, 408.75)
+scale = Vector2(0.08, 0.08)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.6, 0.6)
 
 [node name="Battery" parent="." instance=ExtResource("3_c3yia")]
 position = Vector2(401, 392.5)
@@ -210,3 +213,12 @@ position = Vector2(471.75, 430.75)
 
 [node name="Battery5" parent="." instance=ExtResource("3_c3yia")]
 position = Vector2(261.75, 384.5)
+
+[node name="door" parent="." instance=ExtResource("5_ts76u")]
+position = Vector2(880, 288)
+
+[node name="IDCard" parent="." instance=ExtResource("6_6wi68")]
+position = Vector2(320.5, 418)
+
+[node name="IDCard2" parent="." instance=ExtResource("6_6wi68")]
+position = Vector2(366.25, 450.75)
