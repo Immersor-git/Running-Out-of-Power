@@ -19,21 +19,26 @@ var textToAdd = "this text is added and its a little bit kinda long lmfao"
 func _physics_process(delta):
 	if Input.is_action_pressed("close_menu"):
 		close_textbox()
+	#if Input.is_action_pressed("")
 
 
 func _ready():
 	close_textbox()
-	add_text(textToAdd)
+	textToAdd = _load_json_file(file_path, "Motherboard")
+	print(textToAdd[0])
+	add_text(textToAdd[0])
+
 	#SignalBus.connect("display_dialogue", self,"on_display_dialogue")
 
 
-func _load_json_file(filePath : String):
+func _load_json_file(filePath : String, interactionSource : String):
 	if FileAccess.file_exists(filePath):
 		var datafile = FileAccess.open(filePath, FileAccess.READ)
 		var parsedResult = JSON.parse_string(datafile.get_as_text())
 		
 		if parsedResult is Dictionary:
-			return parsedResult
+			print(parsedResult[interactionSource])
+			return parsedResult[interactionSource]
 		else:
 			print("error reading file")
 	else:
@@ -66,8 +71,8 @@ func _on_character_timeout():
 	#var mainString = textBoxText.get_text()
 	iterative_text += 1
 	print(iterative_text)
-	textBoxText.text = textToAdd.substr(0, iterative_text)
-	if iterative_text == textToAdd.length():
+	textBoxText.text = textToAdd[0].substr(0, iterative_text)
+	if iterative_text == textToAdd[0].length():
 		$TextBoxContainer/MarginContainer/HBoxContainer/nextChar.stop()
 		print("text typing done!")
 	 # Replace with function body.
