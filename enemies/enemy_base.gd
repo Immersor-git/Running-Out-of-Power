@@ -15,7 +15,7 @@ func _ready():
 
 func set_path(path):
 	Path = path
-	#Path.visible = false
+	Path.visible = false
 	Path.top_level = true
 	update_closest_point()
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bi3ib870qqwh4"]
 
 [ext_resource type="Script" path="res://enemies/angel/enemy_angel.gd" id="1_cl3vq"]
-[ext_resource type="Texture2D" uid="uid://dk4kagl2ru3ok" path="res://enemies/angel/angel_sprite_sheet.png" id="2_uqe2f"]
+[ext_resource type="Texture2D" uid="uid://dk4kagl2ru3ok" path="res://enemies/angel_sprite_sheet.png" id="2_uqe2f"]
 [ext_resource type="PackedScene" uid="uid://bj0l46jyyahfn" path="res://enemies/enemy_base.tscn" id="3_638vx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02rs4"]
@@ -16,6 +16,7 @@ script = ExtResource("1_cl3vq")
 
 [node name="AngelSpriteSheet" type="Sprite2D" parent="."]
 top_level = true
+texture_filter = 1
 scale = Vector2(2.89996, 2.89996)
 texture = ExtResource("2_uqe2f")
 offset = Vector2(8, 0)
