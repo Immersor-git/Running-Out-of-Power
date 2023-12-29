@@ -32,7 +32,4 @@ func _on_handle_follow():
 
 func _physics_process(delta):
 	should_follow()
-	
-	if not velocity == Vector2.ZERO:
-		$AnimationTree.set("parameters/Direction/blend_position", velocity)
 	move_and_slide()

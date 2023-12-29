@@ -18,7 +18,6 @@ func set_path(path):
 	#Path.visible = false
 	Path.top_level = true
 	update_closest_point()
-	print(next_node)
 
 func _on_start_homing():
 	update_closest_point()
@@ -44,12 +43,13 @@ func _physics_process(delta):
 		if state == STATE.HOMING:
 			parent.look_at(closest_point)
 			parent.velocity = Vector2.RIGHT.rotated(parent.global_rotation) * parent.SPEED
-			if closest_point.distance_to(global_position) < (parent.SPEED / 60):
+			print("dis: ", closest_point.distance_to(global_position), ", pSpeed ", parent.SPEED / 4)
+			if closest_point.distance_to(global_position) < parent.SPEED / 4:
 				state = STATE.PATROLLING
 		elif state == STATE.PATROLLING:
 			var next_point = Path.to_global(Path.get_point_position(next_node))
 			var distance_to_next_point = next_point.distance_to(global_position)
-			if distance_to_next_point < (parent.SPEED / 60):
+			if distance_to_next_point < parent.SPEED / 4:
 				for i in Path.points.size():
 					if closest_point == Path.to_global(Path.get_point_position(i)):
 						next_node = (i + 1) % Path.points.size()
