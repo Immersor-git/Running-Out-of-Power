@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi3ib870qqwh4"]
+
+[ext_resource type="Script" path="res://enemies/angel/enemy_angel.gd" id="1_cl3vq"]
+[ext_resource type="PackedScene" uid="uid://bj0l46jyyahfn" path="res://enemies/enemy_base.tscn" id="3_638vx"]
+[ext_resource type="Texture2D" uid="uid://30h5kbgss1br" path="res://icon.svg" id="3_ulude"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_02rs4"]
+radius = 4332.14
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1phgq"]
+radius = 208.118
+
+[node name="Angel" type="CharacterBody2D"]
+script = ExtResource("1_cl3vq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.913725, 0.556863, 0.662745, 0.388235)
+position = Vector2(2, -1)
+scale = Vector2(3, 3)
+texture = ExtResource("3_ulude")
+
+[node name="DetectBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 64
+
+[node name="DetectBoxCollider" type="CollisionShape2D" parent="DetectBox"]
+shape = SubResource("CircleShape2D_02rs4")
+debug_color = Color(0.839216, 0.364706, 0.333333, 0.419608)
+
+[node name="EnemyBase" parent="." instance=ExtResource("3_638vx")]
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1phgq")
+
+[connection signal="set_path" from="." to="EnemyBase" method="set_path"]
+[connection signal="start_following" from="." to="EnemyBase" method="_on_start_following"]
+[connection signal="start_homing" from="." to="EnemyBase" method="_on_start_homing"]
+[connection signal="handle_follow" from="EnemyBase" to="." method="_on_handle_follow"]

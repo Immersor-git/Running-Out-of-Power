@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6b3uoftf4vkv"]
+
+[ext_resource type="PackedScene" uid="uid://bi3ib870qqwh4" path="res://enemies/angel/enemy_angel.tscn" id="1_4outp"]
+[ext_resource type="PackedScene" uid="uid://cy13ex8xagg2r" path="res://test_player.tscn" id="2_8xhl2"]
+
+[node name="enemy_test_level" type="Node2D"]
+
+[node name="Angel" parent="." node_paths=PackedStringArray("Path") instance=ExtResource("1_4outp")]
+position = Vector2(304, 439)
+Path = NodePath("AngelPath")
+
+[node name="AngelPath" type="Line2D" parent="Angel"]
+points = PackedVector2Array(201, 315, 650, 1581, 4277, 4383, 10229, 4422, 16254, 1240, 18496, -2070, 15058, -5978, 8202, -7623, 3396, -6256)
+closed = true
+
+[node name="test_player" parent="." instance=ExtResource("2_8xhl2")]
+position = Vector2(15418, 6884)
+
+[node name="Camera2D" type="Camera2D" parent="test_player"]
+zoom = Vector2(0.08, 0.08)
