@@ -12,10 +12,10 @@ void fragment(){
 	invertFlashlight.r = 1.0 - invertFlashlight.r;
 	invertFlashlight.g = 1.0 - invertFlashlight.g;
 	invertFlashlight.b = 1.0 - invertFlashlight.b;
-	vec2 distortedUV = SCREEN_UV + texture(distortionTexture, UV).r * 0.5;
+	vec2 distortedUV = SCREEN_UV + texture(distortionTexture, UV).r * 0.05;
 	vec4 distortedScreen = texture(SCREEN_TEXTURE, distortedUV);
 	vec4 invertMask = distortedScreen * invertFlashlight;
-	float brightness = 0.299 * screenColor.r + 0.587 * screenColor.g + 0.114 * screenColor.b;
+	float brightness = (0.299 * screenColor.r + 0.587 * screenColor.g + 0.114 * screenColor.b) - 0.4;
 	vec4 grayScale = vec4(brightness, brightness, brightness, screenColor.a);
 	vec4 maskedGrayscale = invertFlashlight * grayScale;
 	
