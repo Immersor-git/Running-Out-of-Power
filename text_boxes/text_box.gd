@@ -1,5 +1,11 @@
 extends CanvasLayer
 
+var file_path = "dialogue.json"
+var json_as_text = FileAccess.get_file_as_string(file_path)
+var json_as_dict = JSON.parse_string(json_as_text)
+
+
+
 @onready var textBoxContainer = $TextBoxContainer
 @onready var textBoxText = $TextBoxContainer/MarginContainer/HBoxContainer/LabelText
 
