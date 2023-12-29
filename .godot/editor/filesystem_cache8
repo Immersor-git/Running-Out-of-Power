@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1703806234
+flashlight.gd::GDScript::-1::1703806045::0::1::::<>Area2D<>::
+fog.gdshader::Shader::-1::1703806045::0::1::::<><>::
+icon.svg::CompressedTexture2D::5112031443287310527::1703806045::1703806219::1::::<><>::
+player.gd::GDScript::-1::1703806045::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::1311474034135824205::1703806233::0::1::::<><>::res://fog.gdshader<>res://player.gd<>uid://ce3kn8dx2uxk6::::res://icon.svg<>res://flashlight.gd
+sample_map.tscn::PackedScene::6163383064329123694::1703806234::0::1::::<><>::res://fog.gdshader<>uid://sxj1ykp6a51r::::res://player.tscn
+::res://Running_Out_Of_Power/::1703797315
+::res://Running_Out_Of_Power/Concepts/::1703797293

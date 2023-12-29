@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct2uavqt1ddf7"]
+[gd_scene load_steps=7 format=3 uid="uid://ct2uavqt1ddf7"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_11quc"]
+[ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemy_ShyDog/enemy_shydog.tscn" id="2_ctxfj"]
 [ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_ekb26"]
 
 [sub_resource type="GDScript" id="GDScript_iubpq"]
@@ -16,6 +17,14 @@ shader = ExtResource("1_11quc")
 script = SubResource("GDScript_iubpq")
 
 [node name="player" parent="." instance=ExtResource("2_ekb26")]
+
+[node name="Patroller" parent="." instance=ExtResource("2_ctxfj")]
+
+[node name="Patroller2" parent="." instance=ExtResource("2_ctxfj")]
+
+[node name="Patroller3" parent="." instance=ExtResource("2_ctxfj")]
+
+[node name="Patroller4" parent="." instance=ExtResource("2_ctxfj")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
