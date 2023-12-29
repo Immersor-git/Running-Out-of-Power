@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://sxj1ykp6a51r"]
+[gd_scene load_steps=8 format=3 uid="uid://sxj1ykp6a51r"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
 [ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
 [ext_resource type="Texture2D" uid="uid://ce3kn8dx2uxk6" path="res://icon.svg" id="2_1xg5g"]
 [ext_resource type="Script" path="res://flashlight.gd" id="3_dh52x"]
+[ext_resource type="Texture2D" uid="uid://ce4l5nfwbgny1" path="res://PROTAG_mossy.png" id="5_yc7is"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
 shader = ExtResource("1_7kqtt")
@@ -42,4 +43,6 @@ position = Vector2(488, -14)
 texture = ExtResource("2_1xg5g")
 
 [node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_1xg5g")
+position = Vector2(-2, 0)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("5_yc7is")

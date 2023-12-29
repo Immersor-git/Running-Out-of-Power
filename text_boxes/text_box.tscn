@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://71cfxnqhp0ne"]
+[gd_scene load_steps=5 format=3 uid="uid://71cfxnqhp0ne"]
 
 [ext_resource type="Script" path="res://text_boxes/text_box.gd" id="1_qs0xc"]
+[ext_resource type="FontFile" uid="uid://b1jci65403xkw" path="res://text_boxes/Lucida Sans Typewriter Regular.ttf" id="2_gimm6"]
 [ext_resource type="Script" path="res://text_boxes/Button.gd" id="2_x2ruu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_koxgx"]
@@ -43,6 +44,7 @@ layout_mode = 2
 [node name="startLabel" type="Label" parent="TextBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_gimm6")
 theme_override_font_sizes/font_size = 70
 text = "*"
 
@@ -50,6 +52,7 @@ text = "*"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_gimm6")
 theme_override_font_sizes/font_size = 40
 text = "GOD MOTHA FUCKIN DAMNbb im a fuckin gggenius and it also automatically wraps text too heheheheheh"
 autowrap_mode = 3
@@ -58,6 +61,7 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("2_gimm6")
 theme_override_font_sizes/font_size = 60
 text = "esc"
 flat = true

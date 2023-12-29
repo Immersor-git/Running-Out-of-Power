@@ -3,3 +3,6 @@ res://fog.gdshader
 res://text_boxes/text_box.tscn
 res://text_boxes/descriptorBox.tscn
 res://text_boxes/descriptor_box.tscn
+res://enemy_ShyDog/enemy_shydog.tscn
+res://enemy_ShyDog/shydog.tscn
+res://text_boxes/interactable.tscn
