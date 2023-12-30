@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
+@export var Player: CharacterBody2D;
+
 enum STATE {Curious,Threatened,Attacking}
 
 var state = STATE.Curious
@@ -136,7 +138,7 @@ func stateAttacking():
 	state = STATE.Threatened
 
 func target_position():
-	return get_parent().get_node("player").global_position
+	return Player.global_position
 
 func _physics_process(delta):
 	if started == false: return

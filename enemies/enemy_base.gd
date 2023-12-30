@@ -24,6 +24,7 @@ func _on_start_homing():
 	state = STATE.HOMING
 
 func _on_start_following():
+	print("follow mode")
 	state = STATE.FOLLOWING
 
 func update_closest_point():

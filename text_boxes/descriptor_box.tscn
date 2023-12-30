@@ -56,7 +56,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("2_qc0qa")
 theme_override_font_sizes/font_size = 30
-text = "GOD MOTHA FUCKIN DAMNbb im a fuckin gggenius and it also automatically wraps text too heheheheheh"
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="TextBoxContainer/MarginContainer/HBoxContainer"]

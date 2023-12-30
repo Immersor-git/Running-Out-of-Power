@@ -29,7 +29,29 @@ func _on_handle_follow():
 		if  check_angle_distance(player[0].global_rotation, angle_rot) > 0.4:
 			look_at(player[0].global_position)
 			velocity = Vector2.RIGHT.rotated(global_rotation) * SPEED
+			#print('VELOCITY IS', abs(velocity[0]))
+			#down is 0, 800
+			#up is 0, -800
+			#left is -800, 0
+			#right is 800, 0
 
 func _physics_process(delta):
 	should_follow()
 	move_and_slide()
+	if velocity != Vector2.ZERO:
+		if abs(velocity[0]) > abs(velocity[1]):
+			if velocity[0] > 0:
+				print('MOVING RIGHT')
+				$AnimationPlayer.play('moveSide')
+				$AngelSpriteSheet.flip_h = true
+			else:
+				print('MOVING LEFT')
+				$AngelSpriteSheet.flip_h = false
+				$AnimationPlayer.play('moveSide')
+		else:
+			if velocity[1] > 0:
+				print('MOVING DOWN')
+				$AnimationPlayer.play('moveDown')
+			else:
+				print('MOVING UP')
+				$AnimationPlayer.play('moveUp')
