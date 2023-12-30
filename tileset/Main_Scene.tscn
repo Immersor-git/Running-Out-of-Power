@@ -57,12 +57,11 @@ position = Vector2(3587, 1283)
 [node name="Battery" parent="." instance=ExtResource("4_tr83r")]
 position = Vector2(3144, 1302)
 
-<<<<<<< HEAD
 [node name="ambient_main" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_j3xhm")
 volume_db = -17.051
-=======
+
 [node name="Angel" parent="." node_paths=PackedStringArray("Path") instance=ExtResource("4_dem24")]
 position = Vector2(-6220, -4540)
 Path = NodePath("Line2D")
@@ -70,4 +69,3 @@ Path = NodePath("Line2D")
 [node name="Line2D" type="Line2D" parent="Angel"]
 points = PackedVector2Array(-247, -283, 75, -330, 342, -232, 494, -37, 490, 293, 240, 488, -188, 480, -391, 336, -485, 81, -459, -135)
 closed = true
->>>>>>> bfde6c162a1061b9402481576b7219fbafdc71f9
