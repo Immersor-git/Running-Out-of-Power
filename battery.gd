@@ -14,6 +14,6 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if get_rect().has_point(to_local(get_global_mouse_position())) and position.distance_to(%player.position) < 50:
+		if get_rect().has_point(to_local(get_global_mouse_position())) and position.distance_to(%Player.position) < 50:
 			print("clicked")
 			queue_free()

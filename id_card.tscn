@@ -4,5 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bnltrbv3nri4a" path="res://ID_blue.png" id="2_hctdv"]
 
 [node name="IDCard" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(3.24158, 3.24158)
 texture = ExtResource("2_hctdv")
 script = ExtResource("1_6u3st")
