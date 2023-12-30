@@ -61,7 +61,7 @@ func updateAnimation():
 		$AnimationPlayer.play(animName)
 		$AnimationPlayer.advance(0)
 		lastAnim = animName
-		print(animName)
+		#print(animName)
 		
 		
 		
@@ -122,12 +122,12 @@ func stateAttacking():
 	actualPosition = global_position + (actualPosition - global_position)*2
 	get_node("%Doggygon").stateAttack()
 	gvelocity = Vector2(1400,0).rotated(global_rotation)
-	print("V1")
-	print(velocity)
+	#print("V1")
+	#print(velocity)
 	move_and_slide()
 	await get_tree().create_timer(0.4).timeout
-	print("V2")
-	print(velocity)
+	#print("V2")
+	#print(velocity)
 	gvelocity = Vector2(600,0).rotated(global_rotation)
 	move_and_slide()
 	await get_tree().create_timer(0.6).timeout
@@ -175,22 +175,22 @@ func behavior():
 		state = STATE.Threatened
 	else:
 		var doesLunge = randf_range(0,1)
-		print("AttackChance")
-		print(doesLunge)
+		#print("AttackChance")
+		#print(doesLunge)
 		if doesLunge < 0.9:
 			state = STATE.Attacking
 			await stateAttacking()
 		circleDirection = randi_range(0,1) * 2 -1
 		state = STATE.Curious
 			
-	print("Setting state")
-	print("State")
+	#print("Setting state")
+	#print("State")
 	
 	get_node("Timer").wait_time = randi_range(3,7)
 	
 func _ready():
 	started = true
-	print("Starting")
+	#print("Starting")
 	circleDirection = randi_range(-1,1)
 	get_node("Timer").wait_time = randi_range(3,7)
 	get_node("Timer").start()
