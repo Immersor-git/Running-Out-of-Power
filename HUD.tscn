@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://f2xrbnph3dy"]
+
+[ext_resource type="Texture2D" uid="uid://ctsw7ju1k8my6" path="res://EmptyUI.png" id="1_kd6cm"]
+[ext_resource type="Texture2D" uid="uid://bsynw8buah6ec" path="res://HealthUIFull.png" id="2_o0715"]
+
+[node name="HUD" type="Node2D"]
+
+[node name="Display" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Display"]
+position = Vector2(84, 620)
+texture = ExtResource("1_kd6cm")
+
+[node name="healf" type="Sprite2D" parent="Display"]
+position = Vector2(84, 620)
+texture = ExtResource("2_o0715")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca1gb02u0b62g"]
+[gd_scene load_steps=7 format=3 uid="uid://c1x00vslapi5s"]
 
-[ext_resource type="PackedScene" uid="uid://bsalaifvi7mso" path="res://battery.tscn" id="2_7g43s"]
-[ext_resource type="PackedScene" uid="uid://c0174oelebw5j" path="res://player.tscn" id="3_7cbog"]
+[ext_resource type="PackedScene" path="res://battery.tscn" id="2_7g43s"]
+[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="3_7cbog"]
 [ext_resource type="Script" path="res://interactable.gd" id="4_dlph4"]
 [ext_resource type="PackedScene" uid="uid://bx78jlt0ajvh" path="res://text_boxes/descriptor_box.tscn" id="4_guxs0"]
 [ext_resource type="Texture2D" uid="uid://3rj104luerph" path="res://downed_robot_1.png" id="5_nbraj"]
