@@ -126,19 +126,17 @@ func stateAttacking():
 	gvelocity = Vector2(1400,0).rotated(global_rotation)
 	#print("V1")
 	#print(velocity)
-	move_and_slide()
 	await get_tree().create_timer(0.4).timeout
 	#print("V2")
 	#print(velocity)
 	gvelocity = Vector2(600,0).rotated(global_rotation)
-	move_and_slide()
 	await get_tree().create_timer(0.6).timeout
 	lookPlayer = true
 	action = false
 	state = STATE.Threatened
 
 func target_position():
-	return Player.global_position
+	return Player.global_position - Vector2(0,15)
 
 func _physics_process(delta):
 	if started == false: return
@@ -168,6 +166,13 @@ func _physics_process(delta):
 	handleDirection()
 	updateAnimation()
 	move_and_slide()
+	
+	move_and_slide()
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var colName = collision.get_collider().name
+		if name == "PlayerHitbox":
+			print("I collided with ", collision.get_collider().name)
 	
 func behavior():
 	if action: 
