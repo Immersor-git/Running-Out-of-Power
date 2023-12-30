@@ -4,5 +4,7 @@
 [ext_resource type="Script" path="res://battery.gd" id="2_evtyc"]
 
 [node name="Battery" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(2.49144, 2.49144)
 texture = ExtResource("1_waaof")
 script = ExtResource("2_evtyc")

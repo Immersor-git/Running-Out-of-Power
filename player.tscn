@@ -1,18 +1,22 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0174oelebw5j"]
+[gd_scene load_steps=28 format=3 uid="uid://dgwst51ylc6bh"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
 [ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
 [ext_resource type="Script" path="res://flashlight.gd" id="3_dh52x"]
-[ext_resource type="Texture2D" uid="uid://d1xfmcee1esv3" path="res://player/walking_protag_sprite_sheet.png" id="4_n46k1"]
 [ext_resource type="Texture2D" uid="uid://3ydfflmdaiux" path="res://player/light_beam.png" id="4_rphh7"]
 [ext_resource type="Shader" path="res://flashlight.gdshader" id="4_wp0jj"]
 [ext_resource type="Texture2D" uid="uid://b6xxnbjbwsu3d" path="res://player/shading_FOW_Small.png" id="7_hryr5"]
+[ext_resource type="Script" path="res://animation.gd" id="8_57g1y"]
+[ext_resource type="Texture2D" uid="uid://fxouvv7u0g8r" path="res://player/sprites/protag_idle_down.png" id="8_rxpye"]
+[ext_resource type="Texture2D" uid="uid://bevqfyydwh3li" path="res://player/sprites/protag_walk_down.png" id="9_egbwv"]
+[ext_resource type="Texture2D" uid="uid://4kgnpknaekrh" path="res://player/sprites/protag_walk_up.png" id="10_ioa5l"]
+[ext_resource type="Texture2D" uid="uid://b35nojc1jmp1" path="res://player/sprites/protag_walk_left.png" id="11_mujaf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
 shader = ExtResource("1_7kqtt")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yql8d"]
-radius = 40.4475
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsd38"]
+radius = 68.0294
 
 [sub_resource type="Gradient" id="Gradient_se0co"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -24,6 +28,16 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.83, 0.83)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wpccn"]
+frequency = 0.0449
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nrinc"]
+noise = SubResource("FastNoiseLite_wpccn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0w4oq"]
+shader = ExtResource("4_wp0jj")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_nrinc")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxfyg"]
 shader = ExtResource("4_wp0jj")
 
@@ -33,15 +47,217 @@ polygon = PackedVector2Array(0, 0, 297.581, -187.295)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6pr63"]
 polygon = PackedVector2Array(0, 0, 487.676, 2751.28)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_wpccn"]
-frequency = 0.0145
+[sub_resource type="Animation" id="Animation_utn7s"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkingProtagSpriteSheet:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_rxpye")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkingProtagSpriteSheet:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkingProtagSpriteSheet:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nrinc"]
-noise = SubResource("FastNoiseLite_wpccn")
+[sub_resource type="Animation" id="Animation_xkuk7"]
+resource_name = "protag_idle_down"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkingProtagSpriteSheet:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_rxpye")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkingProtagSpriteSheet:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkingProtagSpriteSheet:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0]
+}
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0w4oq"]
-shader = ExtResource("4_wp0jj")
-shader_parameter/distortionTexture = SubResource("NoiseTexture2D_nrinc")
+[sub_resource type="Animation" id="Animation_ffvfc"]
+resource_name = "protag_walk_down"
+loop_mode = 1
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkingProtagSpriteSheet:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_egbwv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkingProtagSpriteSheet:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkingProtagSpriteSheet:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.261142, 0.548572, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 0, 2, 0]
+}
+
+[sub_resource type="Animation" id="Animation_r7vyc"]
+resource_name = "protag_walk_left"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkingProtagSpriteSheet:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_mujaf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkingProtagSpriteSheet:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkingProtagSpriteSheet:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_46qyb"]
+resource_name = "protag_walk_up"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WalkingProtagSpriteSheet:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_ioa5l")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WalkingProtagSpriteSheet:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WalkingProtagSpriteSheet:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1u38"]
+_data = {
+"RESET": SubResource("Animation_utn7s"),
+"protag_idle_down": SubResource("Animation_xkuk7"),
+"protag_walk_down": SubResource("Animation_ffvfc"),
+"protag_walk_left": SubResource("Animation_r7vyc"),
+"protag_walk_up": SubResource("Animation_46qyb")
+}
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
@@ -50,8 +266,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_fxm7v")
 
 [node name="rigidbody" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 8)
-shape = SubResource("CircleShape2D_yql8d")
+position = Vector2(-12, 84)
+shape = SubResource("CircleShape2D_lsd38")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
@@ -63,6 +279,14 @@ range_layer_min = -1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_70qr4")
 texture_scale = 8.65
+
+[node name="LightBeam" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0w4oq")
+position = Vector2(-8, 38)
+rotation = 1.57079
+scale = Vector2(4, 4)
+texture = ExtResource("7_hryr5")
+script = ExtResource("8_57g1y")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(4.07906, 4.07906)
@@ -104,20 +328,17 @@ occluder = SubResource("OccluderPolygon2D_6pr63")
 [node name="WalkingProtagSpriteSheet" type="Sprite2D" parent="."]
 top_level = true
 texture_filter = 1
-position = Vector2(4, -40)
 scale = Vector2(2.48983, 2.48983)
-texture = ExtResource("4_n46k1")
-hframes = 4
+texture = ExtResource("8_rxpye")
+hframes = 3
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-position = Vector2(8, -80)
 remote_path = NodePath("../WalkingProtagSpriteSheet")
 update_rotation = false
 update_scale = false
 
-[node name="LightBeam" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0w4oq")
-position = Vector2(-8, 38)
-rotation = 1.57079
-scale = Vector2(4, 4)
-texture = ExtResource("7_hryr5")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x1u38")
+}
+speed_scale = 4.0
