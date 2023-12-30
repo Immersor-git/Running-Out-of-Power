@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://sxj1ykp6a51r"]
+[gd_scene load_steps=28 format=3 uid="uid://dgwst51ylc6bh"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
 [ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
@@ -15,9 +15,8 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
 shader = ExtResource("1_7kqtt")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0alpx"]
-radius = 64.0
-height = 280.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_lsd38"]
+radius = 68.0294
 
 [sub_resource type="Gradient" id="Gradient_se0co"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -49,7 +48,7 @@ polygon = PackedVector2Array(0, 0, 297.581, -187.295)
 polygon = PackedVector2Array(0, 0, 487.676, 2751.28)
 
 [sub_resource type="Animation" id="Animation_utn7s"]
-length = 0.001
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -267,8 +266,8 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_fxm7v")
 
 [node name="rigidbody" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 8)
-shape = SubResource("CapsuleShape2D_0alpx")
+position = Vector2(-12, 84)
+shape = SubResource("CircleShape2D_lsd38")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
@@ -342,3 +341,4 @@ update_scale = false
 libraries = {
 "": SubResource("AnimationLibrary_x1u38")
 }
+speed_scale = 4.0
