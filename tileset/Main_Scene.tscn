@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://ishb24sq3qsy" path="res://tileset/tile_set.tres" id="2_xbg32"]
 [ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemies/enemy_ShyDog/enemy_shydog.tscn" id="3_bntux"]
-[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="3_gbrea"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="3_gbrea"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
