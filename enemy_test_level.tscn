@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6b3uoftf4vkv"]
+[gd_scene load_steps=9 format=3 uid="uid://b6b3uoftf4vkv"]
 
-[ext_resource type="PackedScene" path="res://player.tscn" id="2_4rskp"]
+[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_4rskp"]
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_oomlb"]
 [ext_resource type="Texture2D" uid="uid://gbkr01aqshwf" path="res://tileset/Solaria Demo Update 01.png" id="3_tbw2c"]
 [ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemies/enemy_ShyDog/enemy_shydog.tscn" id="5_a30fi"]
+[ext_resource type="PackedScene" uid="uid://bi3ib870qqwh4" path="res://enemies/angel/enemy_angel.tscn" id="5_hulxu"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kebk"]
 polygon = PackedVector2Array(20, 481, 241, 480, 240, 679, 26, 680)
@@ -426,3 +427,8 @@ position = Vector2(-675, -486)
 [node name="ShyDog 2" parent="." instance=ExtResource("5_a30fi")]
 
 [node name="ShyDog 3" parent="." instance=ExtResource("5_a30fi")]
+
+[node name="Angel" parent="." instance=ExtResource("5_hulxu")]
+position = Vector2(327, 196)
+
+[connection signal="set_path" from="Angel" to="Angel/EnemyBase" method="set_path"]
