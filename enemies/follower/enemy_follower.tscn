@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://8c3tm4y734db"]
+[gd_scene load_steps=7 format=3 uid="uid://8c3tm4y734db"]
 
 [ext_resource type="Script" path="res://enemies/follower/enemy_follow.gd" id="1_kuxae"]
 [ext_resource type="Texture2D" uid="uid://30h5kbgss1br" path="res://icon.svg" id="2_21qt1"]
 [ext_resource type="PackedScene" uid="uid://bj0l46jyyahfn" path="res://enemies/enemy_base.tscn" id="3_w7h5j"]
+[ext_resource type="AudioStream" uid="uid://cbpxe4u6goes7" path="res://enemies/follower/audiomass-output.wav" id="4_vi7ej"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k7xtg"]
 radius = 191.128
@@ -31,6 +32,11 @@ shape = SubResource("CircleShape2D_6p51s")
 debug_color = Color(0.756863, 0.439216, 0.309804, 0.419608)
 
 [node name="EnemyBase" parent="." instance=ExtResource("3_w7h5j")]
+
+[node name="walk_follower" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_vi7ej")
+volume_db = -17.829
 
 [connection signal="set_path" from="." to="EnemyBase" method="set_path"]
 [connection signal="start_following" from="." to="EnemyBase" method="_on_start_following"]

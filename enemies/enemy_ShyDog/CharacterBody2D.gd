@@ -126,6 +126,8 @@ func stateAttacking():
 	gvelocity = Vector2(1400,0).rotated(global_rotation)
 	#print("V1")
 	#print(velocity)
+	%growl.playing = true
+	move_and_slide()
 	await get_tree().create_timer(0.4).timeout
 	#print("V2")
 	#print(velocity)
@@ -165,6 +167,10 @@ func _physics_process(delta):
 	#print("Vel:"+str(velocity))
 	handleDirection()
 	updateAnimation()
+	if %walk_shy.playing == false:
+		%walk_shy.playing = true
+	if %ambient_shy.playing == false:
+		%ambient_shy.playing = true
 	move_and_slide()
 	
 	move_and_slide()

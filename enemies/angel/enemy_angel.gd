@@ -14,6 +14,11 @@ func should_follow():
 	var player = %DetectBox.get_overlapping_bodies()
 	if player.size() > 0:
 		start_following.emit()
+		if %approaching.playing == false:
+			%approaching.playing = true
+	elif %approaching.playing == true:
+		%approaching.playing = false
+		%noticed.playing = true
 
 func check_angle_distance(angle1, angle2):
 	var min_angle = fmod(min(angle1, angle2), TAU)

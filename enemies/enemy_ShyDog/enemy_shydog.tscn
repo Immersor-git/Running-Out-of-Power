@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bvblgopn4jmlh"]
+[gd_scene load_steps=28 format=3 uid="uid://bvblgopn4jmlh"]
 
 [ext_resource type="Script" path="res://enemies/enemy_ShyDog/CharacterBody2D.gd" id="1_6qkpl"]
 [ext_resource type="Script" path="res://enemies/enemy_ShyDog/EnemyColor.gd" id="2_tcd4h"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://by28kok5w74ab" path="res://enemies/enemy_ShyDog/sprites/shydog_leap_aggro_down.png" id="10_i2xar"]
 [ext_resource type="Texture2D" uid="uid://c2igqwnsk3e0q" path="res://enemies/enemy_ShyDog/sprites/shydog_leap_aggro_right.png" id="11_vhv4f"]
 [ext_resource type="Texture2D" uid="uid://dxakykphtm156" path="res://enemies/enemy_ShyDog/sprites/shydog_idle_aggro_right.png" id="12_knt80"]
+[ext_resource type="AudioStream" uid="uid://cqg6qggiw6akv" path="res://enemies/enemy_ShyDog/shydog_ambient.wav" id="13_cyt3u"]
+[ext_resource type="AudioStream" uid="uid://c0rs32ixvsf1w" path="res://enemies/enemy_ShyDog/shydog_growl.wav" id="14_qg0du"]
+[ext_resource type="AudioStream" uid="uid://2yqjtoj0job" path="res://enemies/enemy_ShyDog/shydog_shuffle.wav" id="15_2gxaq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xokvy"]
 radius = 9.68963
@@ -581,5 +584,23 @@ hframes = 5
 libraries = {
 "": SubResource("AnimationLibrary_ajyvp")
 }
+
+[node name="ambient_shy" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("13_cyt3u")
+volume_db = -10.895
+autoplay = true
+
+[node name="growl" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_qg0du")
+volume_db = -14.735
+autoplay = true
+
+[node name="walk_shy" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_2gxaq")
+volume_db = -20.09
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
