@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6b3uoftf4vkv"]
 
-[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="2_4rskp"]
+[ext_resource type="PackedScene" path="res://player.tscn" id="2_4rskp"]
 [ext_resource type="Script" path="res://MainCamera.gd" id="2_oomlb"]
 [ext_resource type="Texture2D" uid="uid://gbkr01aqshwf" path="res://tileset/Solaria Demo Update 01.png" id="3_tbw2c"]
 [ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemies/enemy_ShyDog/enemy_shydog.tscn" id="5_a30fi"]

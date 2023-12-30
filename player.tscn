@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://sxj1ykp6a51r"]
+[gd_scene load_steps=20 format=3 uid="uid://c0174oelebw5j"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
 [ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
@@ -7,14 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://3ydfflmdaiux" path="res://player/light_beam.png" id="4_rphh7"]
 [ext_resource type="Shader" path="res://flashlight.gdshader" id="4_wp0jj"]
 [ext_resource type="Texture2D" uid="uid://b6xxnbjbwsu3d" path="res://player/shading_FOW_Small.png" id="7_hryr5"]
-[ext_resource type="Script" path="res://animation.gd" id="8_57g1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o7jv6"]
 shader = ExtResource("1_7kqtt")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0alpx"]
-radius = 64.0
-height = 280.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_yql8d"]
+radius = 40.4475
 
 [sub_resource type="Gradient" id="Gradient_se0co"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -26,16 +24,6 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.83, 0.83)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_wpccn"]
-frequency = 0.0449
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nrinc"]
-noise = SubResource("FastNoiseLite_wpccn")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0w4oq"]
-shader = ExtResource("4_wp0jj")
-shader_parameter/distortionTexture = SubResource("NoiseTexture2D_nrinc")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxfyg"]
 shader = ExtResource("4_wp0jj")
 
@@ -45,6 +33,16 @@ polygon = PackedVector2Array(0, 0, 297.581, -187.295)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6pr63"]
 polygon = PackedVector2Array(0, 0, 487.676, 2751.28)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wpccn"]
+frequency = 0.0145
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nrinc"]
+noise = SubResource("FastNoiseLite_wpccn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0w4oq"]
+shader = ExtResource("4_wp0jj")
+shader_parameter/distortionTexture = SubResource("NoiseTexture2D_nrinc")
+
 [node name="player" type="CharacterBody2D"]
 z_index = 2
 material = SubResource("ShaderMaterial_o7jv6")
@@ -53,7 +51,7 @@ script = ExtResource("1_fxm7v")
 
 [node name="rigidbody" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 8)
-shape = SubResource("CapsuleShape2D_0alpx")
+shape = SubResource("CircleShape2D_yql8d")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
@@ -65,14 +63,6 @@ range_layer_min = -1
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_70qr4")
 texture_scale = 8.65
-
-[node name="LightBeam" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0w4oq")
-position = Vector2(-8, 38)
-rotation = 1.57079
-scale = Vector2(4, 4)
-texture = ExtResource("7_hryr5")
-script = ExtResource("8_57g1y")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(4.07906, 4.07906)
@@ -114,11 +104,20 @@ occluder = SubResource("OccluderPolygon2D_6pr63")
 [node name="WalkingProtagSpriteSheet" type="Sprite2D" parent="."]
 top_level = true
 texture_filter = 1
+position = Vector2(4, -40)
 scale = Vector2(2.48983, 2.48983)
 texture = ExtResource("4_n46k1")
 hframes = 4
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+position = Vector2(8, -80)
 remote_path = NodePath("../WalkingProtagSpriteSheet")
 update_rotation = false
 update_scale = false
+
+[node name="LightBeam" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0w4oq")
+position = Vector2(-8, 38)
+rotation = 1.57079
+scale = Vector2(4, 4)
+texture = ExtResource("7_hryr5")

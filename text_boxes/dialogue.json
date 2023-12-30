@@ -4,5 +4,50 @@
 	],
 	"Interactable": [
 		"this is a small interactable thingy"
-	]
+	],
+    "BroughtBattery1":[
+        "Oh, my battery. I didn’t think you’d manage it. Are you upset again? You’re being silly, its abandoned out there. You’re just upsetting yourself. It’s always something with you. No, I’m not angry. Go plug in, and we can forget it ever happened."
+    ],
+    "BroughtBattery2":[
+        "My battery! Returned to me once more! I could sing when I see you, little battery. I don’t know what I’d do if you left me. Go plug in, and we’ll rest together."
+    ],
+    "BroughtBattery3":[
+        "So you decided to come back. You’re gone for longer and longer each day, and it breaks my heart. Is that what you want? To break my heart? Oh, you brought me what I asked for. I didn’t think you cared. You’re gone for so long, you must hate me. It makes me want to power down and never turn on again. Oh, I didn’t mean it, my battery. You must hate me. Please come plug in, and let’s forget it ever happened."
+    ],
+    "NoBattery1":[
+        "I ask you for something so simple, and you can’t do it. You can’t even do it for me. Just go plug in. I don’t want to look at you."
+    ],
+    "NoBattery2":[
+        "Oh, sweet battery, don’t look so sad. I can’t help but be sad when you’re sad. Are you really surprised? We both know you didn’t have it in you. Go plug in, and at least try to cheer up."
+    ],
+    "NoBattery3":[
+        "You’re back. You’re back, but you brought me nothing. Some days I don’t know why I built you."
+    ],
+    "DeadBot":[
+        "The body of an old robot, long gone now. It looks just like you. Mothership hadn't mentioned how much they'd look like you."
+    ],
+    "DeadBotBattery":[
+        "This one has a battery. This is what you’re here for. You know whoever lived here is long gone, but you watch for a moment anyways to see if its eyes light up. Would they be the same color as yours? They stay dark."
+    ],
+    "DeadBotNoBattery":[
+        "Another old robot, but no battery here. You’ve never been without your battery. It sounds awful."
+    ],
+    "2DeadBots":[
+        "Oh. These ones were together when they uploaded. You think about sitting next to them for a moment, but you don’t. You wonder what their serial numbers were. Did they like living here? You think they did."
+    ],
+    "Bookshelves":[
+        "A bookshelf. What’s on here? Purple toys, made of stuffed cloth. Purple, that’s your color! Nothing on mothership is this soft. What’s on this shelf? Boxes? It’s hard to say. This shelf has bottles of wax and oil, for keeping chrome as bright and shiny as a mirror. Your olfactor chip tells you they smell like lavender."
+    ],
+    "Keycard":[
+        "A keycard! There's probably a door somewhere around here with a matching color."
+    ],
+    "OutsideMothership":[
+        "Mothership. You hope she’s in a good mood."
+    ],
+    "FacilityPlug":[
+        "A plug like yours. It looks like it needs a battery to work. You’ve never seen one outside of mothership. You look at it for a while. You didn’t know there were charging plugs outside of mothership."
+    ],
+    "MothershipStart":[
+        "Wake up, my sweet. We’re landing now. Look, down there. It used to be a living facility, when they were building a ship like this one. They must have finished it, too. All that’s left here now is the native fauna. Everyone else must have uploaded themselves to shiny new bodies on their new ship. And, my sweet, they left their batteries behind. I need you to get them for me. You’ll do that for me, won’t you? You can do it. I wouldn’t send you anywhere you weren’t safe. "
+    ]
 }
