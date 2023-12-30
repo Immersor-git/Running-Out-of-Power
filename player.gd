@@ -6,13 +6,12 @@ var batteries = 0
 var idCards = 0
 
 var lastAnimName = ""
+var animDir = "down"
 
 func setAnimation():
 	var animName = "protag_"
 	var animType = "idle_"
-	var animDir = "down"
 	
-	get_node("WalkingProtagSpriteSheet").flip_h = false
 	if velocity.length() > 1:
 		animType = "walk_"
 		print("Velocity:" + str(velocity))
@@ -21,10 +20,13 @@ func setAnimation():
 			get_node("WalkingProtagSpriteSheet").flip_h = true
 		elif velocity.x < -5:
 			animDir = "left"
+			get_node("WalkingProtagSpriteSheet").flip_h = false
 		elif velocity.y > 5:
 			animDir = "down"
+			get_node("WalkingProtagSpriteSheet").flip_h = false
 		elif velocity.y < -5:
 			animDir = "up"
+			get_node("WalkingProtagSpriteSheet").flip_h = false
 	var aName = animName + animType + animDir
 	if lastAnimName != aName:
 		$AnimationPlayer.play(aName)

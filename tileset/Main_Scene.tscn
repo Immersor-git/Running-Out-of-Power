@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://7bion7yxof62"]
+[gd_scene load_steps=6 format=3 uid="uid://7bion7yxof62"]
 
 [ext_resource type="TileSet" uid="uid://ishb24sq3qsy" path="res://tileset/tile_set.tres" id="2_xbg32"]
 [ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemies/enemy_ShyDog/enemy_shydog.tscn" id="3_bntux"]
-[ext_resource type="PackedScene" path="res://player.tscn" id="3_gbrea"]
+[ext_resource type="PackedScene" uid="uid://dgwst51ylc6bh" path="res://player.tscn" id="3_gbrea"]
+[ext_resource type="PackedScene" uid="uid://bsalaifvi7mso" path="res://battery.tscn" id="4_tr83r"]
+[ext_resource type="PackedScene" uid="uid://jywq5t4kjuxs" path="res://id_card.tscn" id="5_g1o6w"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -21,6 +23,7 @@ layer_1/y_sort_enabled = true
 layer_1/tile_data = PackedInt32Array(131088, 524288, 0, 131092, 524288, 0, -1769460, 655361, 2, -1769459, 786433, 2, -1769458, 655361, 0, -1769457, 655361, 2, -1834975, 720897, 0, -1834976, 524289, 0, -1834977, 655361, 2, -2228193, 655361, 2, -2228194, 524289, 2, -2228195, 720897, 0, -2228196, 589825, 0, -2228197, 655361, 2, -2228206, 655361, 0, -2228207, 524289, 2, -2228208, 524289, 0, -2228209, 655361, 0, -2228210, 720897, 2)
 
 [node name="Player" parent="." instance=ExtResource("3_gbrea")]
+unique_name_in_owner = true
 position = Vector2(461, 477)
 collision_layer = 65
 
@@ -43,3 +46,9 @@ Player = NodePath("../../Player")
 [node name="Patroller4" parent="Warehouse" node_paths=PackedStringArray("Player") instance=ExtResource("3_bntux")]
 position = Vector2(1850, -794)
 Player = NodePath("../../Player")
+
+[node name="IDCard" parent="." instance=ExtResource("5_g1o6w")]
+position = Vector2(3587, 1283)
+
+[node name="Battery" parent="." instance=ExtResource("4_tr83r")]
+position = Vector2(3144, 1302)

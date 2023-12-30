@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca1gb02u0b62g"]
+[gd_scene load_steps=5 format=3 uid="uid://ca1gb02u0b62g"]
 
-[ext_resource type="PackedScene" uid="uid://bsalaifvi7mso" path="res://battery.tscn" id="2_7g43s"]
-[ext_resource type="PackedScene" uid="uid://c0174oelebw5j" path="res://player.tscn" id="3_7cbog"]
 [ext_resource type="Script" path="res://interactable.gd" id="4_dlph4"]
 [ext_resource type="PackedScene" uid="uid://bx78jlt0ajvh" path="res://text_boxes/descriptor_box.tscn" id="4_guxs0"]
-[ext_resource type="Texture2D" uid="uid://3rj104luerph" path="res://downed_robot_1.png" id="5_nbraj"]
+[ext_resource type="Texture2D" uid="uid://dn17f3gno1v2h" path="res://MOMMAS_CAVE.png" id="6_leef0"]
 
 [sub_resource type="TileSet" id="TileSet_syp51"]
 
@@ -18,22 +16,13 @@ layer_0/tile_data = PackedInt32Array(-2, 327680, 0, 65533, 327680, 0, 131069, 39
 layer_1/name = "Ground Level"
 layer_1/tile_data = PackedInt32Array(262142, 262144, 1, 196605, 196608, 0, 262141, 196608, 1, 196606, 262144, 0, 458753, 196608, 0, 524289, 196608, 1, 458754, 262144, 0, 524290, 262144, 1, 65541, 196608, 0, 131077, 196608, 1, 65542, 262144, 0, 131078, 262144, 1, -196613, 196608, 0, -131077, 196608, 1, -196612, 262144, 0, -131076, 262144, 1, -262139, 196608, 0, -196603, 196608, 1, -262138, 262144, 0, -196602, 262144, 1, 589817, 196608, 0, 655353, 196608, 1, 589818, 262144, 0, 655354, 262144, 1)
 
-[node name="player" parent="." instance=ExtResource("3_7cbog")]
-unique_name_in_owner = true
-
-[node name="Camera2D" type="Camera2D" parent="player"]
-
-[node name="MothershipStart" parent="." instance=ExtResource("2_7g43s")]
-position = Vector2(328, 25)
-scale = Vector2(9.625, 9.625)
-script = ExtResource("4_dlph4")
-
 [node name="TextBox" parent="." instance=ExtResource("4_guxs0")]
 unique_name_in_owner = true
 layer = 7
 
-[node name="DeadBot" type="Sprite2D" parent="."]
-position = Vector2(268, -245)
-scale = Vector2(9.625, 9.625)
-texture = ExtResource("5_nbraj")
+[node name="MothershipStart" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 327)
+scale = Vector2(5.79646, 5.79646)
+texture = ExtResource("6_leef0")
 script = ExtResource("4_dlph4")
