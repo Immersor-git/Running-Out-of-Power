@@ -344,9 +344,10 @@ _data = {
 z_index = 2
 material = SubResource("ShaderMaterial_o7jv6")
 scale = Vector2(0.5, 0.5)
+collision_layer = 193
 script = ExtResource("1_fxm7v")
 
-[node name="rigidbody" type="CollisionShape2D" parent="."]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 76)
 shape = SubResource("CircleShape2D_ibcg3")
 

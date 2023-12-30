@@ -5,27 +5,33 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Patroller2" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller2" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(1272, -342)
+Player = NodePath("../Player")
 
-[node name="Patroller" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(636, -171)
+Player = NodePath("../Player")
 
-[node name="Patroller3" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller3" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(484, -626)
+Player = NodePath("../Player")
 
-[node name="player" parent="." instance=ExtResource("2_pqwj1")]
+[node name="Player" parent="." instance=ExtResource("2_pqwj1")]
 position = Vector2(-224, -163)
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(2.08165e-12, 2.08165e-12)
 scale = Vector2(2, 2)
 
-[node name="Patroller4" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller4" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(-169, 421)
+Player = NodePath("../Player")
 
-[node name="Patroller5" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller5" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(-805, 592)
+Player = NodePath("../Player")
 
-[node name="Patroller6" parent="." instance=ExtResource("1_k74ca")]
+[node name="Patroller6" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("1_k74ca")]
 position = Vector2(-957, 137)
+Player = NodePath("../Player")
