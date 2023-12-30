@@ -552,6 +552,7 @@ _data = {
 
 [node name="Patroller" type="CharacterBody2D"]
 position = Vector2(0, -149)
+collision_mask = 2
 up_direction = Vector2(2.08165e-12, 1)
 floor_max_angle = 1.3439
 script = ExtResource("1_6qkpl")

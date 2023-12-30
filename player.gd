@@ -14,7 +14,6 @@ func setAnimation():
 	
 	if velocity.length() > 1:
 		animType = "walk_"
-		print("Velocity:" + str(velocity))
 		if velocity.x > 5:
 			animDir = "left"
 			get_node("WalkingProtagSpriteSheet").flip_h = true
