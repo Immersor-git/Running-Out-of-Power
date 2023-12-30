@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://sxj1ykp6a51r"]
+[gd_scene load_steps=20 format=3 uid="uid://c0174oelebw5j"]
 
 [ext_resource type="Shader" path="res://fog.gdshader" id="1_7kqtt"]
 [ext_resource type="Script" path="res://player.gd" id="1_fxm7v"]
@@ -44,6 +44,10 @@ polygon = PackedVector2Array(0, 0, 297.581, -187.295)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6pr63"]
 polygon = PackedVector2Array(0, 0, 487.676, 2751.28)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_35bxk"]
+radius = 144.0
+height = 428.0
 
 [node name="player" type="CharacterBody2D"]
 z_index = 2
@@ -122,3 +126,11 @@ hframes = 4
 remote_path = NodePath("../WalkingProtagSpriteSheet")
 update_rotation = false
 update_scale = false
+
+[node name="InteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-10, 8)
+shape = SubResource("CapsuleShape2D_35bxk")
