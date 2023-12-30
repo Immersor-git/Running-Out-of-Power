@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://7bion7yxof62"]
+[gd_scene load_steps=8 format=3 uid="uid://7bion7yxof62"]
 
+[ext_resource type="Script" path="res://tileset/Main_Scene.gd" id="1_ioa4i"]
 [ext_resource type="TileSet" uid="uid://ishb24sq3qsy" path="res://tileset/tile_set.tres" id="2_xbg32"]
 [ext_resource type="PackedScene" uid="uid://bvblgopn4jmlh" path="res://enemies/enemy_ShyDog/enemy_shydog.tscn" id="3_bntux"]
-[ext_resource type="PackedScene" uid="uid://dgwst51ylc6bh" path="res://player.tscn" id="3_gbrea"]
+[ext_resource type="PackedScene" uid="uid://sxj1ykp6a51r" path="res://player.tscn" id="3_gbrea"]
 [ext_resource type="PackedScene" uid="uid://bsalaifvi7mso" path="res://battery.tscn" id="4_tr83r"]
 [ext_resource type="PackedScene" uid="uid://jywq5t4kjuxs" path="res://id_card.tscn" id="5_g1o6w"]
+[ext_resource type="AudioStream" uid="uid://8xi1xr6mobg4" path="res://ambience_world.wav" id="6_j3xhm"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ioa4i")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -52,3 +55,8 @@ position = Vector2(3587, 1283)
 
 [node name="Battery" parent="." instance=ExtResource("4_tr83r")]
 position = Vector2(3144, 1302)
+
+[node name="ambient_main" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_j3xhm")
+volume_db = -17.051

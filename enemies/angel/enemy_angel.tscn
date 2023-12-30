@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bi3ib870qqwh4"]
+[gd_scene load_steps=12 format=3 uid="uid://bi3ib870qqwh4"]
 
 [ext_resource type="Script" path="res://enemies/angel/enemy_angel.gd" id="1_cl3vq"]
 [ext_resource type="Texture2D" uid="uid://dk4kagl2ru3ok" path="res://enemies/angel_sprite_sheet.png" id="2_uqe2f"]
 [ext_resource type="PackedScene" uid="uid://bj0l46jyyahfn" path="res://enemies/enemy_base.tscn" id="3_638vx"]
+[ext_resource type="AudioStream" uid="uid://crig37pt8iyvy" path="res://enemies/angel/audiomass-output.wav" id="4_4mc7j"]
+[ext_resource type="AudioStream" uid="uid://w26u0va1w8e8" path="res://enemies/angel/weepingAngel_noticed.wav" id="5_4inwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_02rs4"]
 radius = 875.005
@@ -104,6 +106,16 @@ update_scale = false
 libraries = {
 "": SubResource("AnimationLibrary_gqtlc")
 }
+
+[node name="approaching" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_4mc7j")
+volume_db = -19.81
+
+[node name="noticed" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_4inwj")
+volume_db = -20.8
 
 [connection signal="set_path" from="." to="EnemyBase" method="set_path"]
 [connection signal="start_following" from="." to="EnemyBase" method="_on_start_following"]

@@ -24,5 +24,7 @@ func _on_handle_follow():
 		start_homing.emit()
 
 func _physics_process(delta):
+	if %walk_follower.playing == false:
+		%walk_follower.playing = true
 	should_follow()
 	move_and_slide()

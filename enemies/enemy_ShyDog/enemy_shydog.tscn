@@ -584,16 +584,22 @@ libraries = {
 "": SubResource("AnimationLibrary_ajyvp")
 }
 
-[node name="ambient_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="ambient_shy" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("13_cyt3u")
+volume_db = -10.895
 autoplay = true
 
 [node name="growl" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("14_qg0du")
+volume_db = -14.735
 autoplay = true
 
-[node name="walk" type="AudioStreamPlayer2D" parent="."]
+[node name="walk_shy" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("15_2gxaq")
+volume_db = -20.09
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
