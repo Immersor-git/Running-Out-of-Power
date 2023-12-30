@@ -20,4 +20,5 @@ func _input(event):
 		if get_rect().has_point(to_local(get_global_mouse_position())):
 			%TextBox.showDescription = true
 			%TextBox.showBox(get_name())
+			#%TextBox.finish_intro()
 			#queue_free()

@@ -5,6 +5,7 @@ var itemData = {}
 @export var showDescription : bool = false
 
 
+
 @onready var textBoxContainer = $TextBoxContainer
 @onready var textBoxText = $TextBoxContainer/MarginContainer/HBoxContainer/LabelText
 
@@ -16,6 +17,7 @@ func _physics_process(delta):
 		showDescription = false
 		iterative_text = 0
 		close_textbox()
+		get_tree().change_scene_to_file("res://tileset/Main_Scene.tscn")
 	#if Input.is_action_pressed("")
 
 
@@ -25,6 +27,8 @@ func _ready():
 		#textToAdd = _load_json_file(file_path, "Motherboard")
 		#print(textToAdd[0])
 		#add_text(textToAdd[0])
+
+
 
 func showBox(interactObject : String):
 	close_textbox()
